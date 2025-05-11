@@ -1,0 +1,103 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* یا یک فونت فارسی مناسب */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* می‌توانید با var(--tg-theme-bg-color) هماهنگ کنید */
+    color: #333; /* می‌توانید با var(--tg-theme-text-color) هماهنگ کنید */
+    direction: rtl;
+}
+
+#game-container {
+    text-align: center;
+    background-color: #fff; /* می‌توانید با var(--tg-theme-secondary-bg-color) هماهنگ کنید */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+    width: 310px; /* 3*100 + 2*5 */
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd; /* می‌توانید با var(--tg-theme-button-color) هماهنگ کنید */
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+    cursor: pointer;
+    color: #555; /* می‌توانید با var(--tg-theme-button-text-color) هماهنگ کنید */
+    transition: background-color 0.2s;
+}
+
+.cell:hover {
+    background-color: #cfcfcf;
+}
+
+.cell.x {
+    color: #007bff; /* رنگ برای X */
+}
+
+.cell.o {
+    color: #dc3545; /* رنگ برای O */
+}
+
+#status-area {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    min-height: 1.5em; /* برای جلوگیری از پرش صفحه */
+}
+
+#restart-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #28a745; /* می‌توانید با var(--tg-theme-button-color) هماهنگ کنید */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#restart-button:hover {
+    background-color: #218838;
+}
+
+/* هماهنگی با تم تلگرام (اختیاری اما خوب) */
+:root {
+    --tg-theme-bg-color: var(--tg-theme-bg-color, #f0f0f0);
+    --tg-theme-text-color: var(--tg-theme-text-color, #333);
+    --tg-theme-secondary-bg-color: var(--tg-theme-secondary-bg-color, #fff);
+    --tg-theme-button-color: var(--tg-theme-button-color, #ddd);
+    --tg-theme-button-text-color: var(--tg-theme-button-text-color, #555);
+}
+
+body {
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+}
+#game-container {
+    background-color: var(--tg-theme-secondary-bg-color);
+}
+/*
+.cell {
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+}
+#restart-button {
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+}
+*/
